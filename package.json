@@ -8,7 +8,7 @@
 	"license": "UNLICENSED",
 	"private": true,
 	"dependencies": {
-		"@spectacles/brokers": "^0.4.0",
+		"@spectacles/brokers": "^0.4.2",
 		"@spectacles/cache": "^0.2.1",
 		"@spectacles/gateway": "^0.8.0"
 	},
