@@ -1,0 +1,31 @@
+{
+	"name": "delphinium",
+	"version": "0.1.0",
+	"description": ".",
+	"main": "src/index.js",
+	"repository": "https://github.com/0-0-2/delphinium",
+	"author": "iCrawl <icrawltogo@gmail.com>",
+	"license": "UNLICENSED",
+	"private": true,
+	"dependencies": {
+		"@spectacles/brokers": "^0.4.0",
+		"@spectacles/cache": "^0.2.1",
+		"@spectacles/gateway": "^0.8.0"
+	},
+	"devDependencies": {
+		"env-cmd": "^7.0.0",
+		"eslint": "^4.17.0",
+		"eslint-config-aqua": "^2.0.1"
+	},
+	"eslintConfig": {
+		"extends": "aqua",
+		"rules": {
+			"no-process-env": "off",
+			"id-length": "off",
+			"no-empty": "off",
+			"no-empty-function": "off",
+			"new-cap": "off",
+			"no-lonely-if": "off"
+		}
+	}
+}
