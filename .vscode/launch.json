@@ -5,7 +5,7 @@
 			"type": "node",
 			"request": "launch",
 			"name": "Test Delphinium",
-			"program": "${workspaceFolder}/src/index.js",
+			"program": "${workspaceFolder}/test/index.js",
 			"envFile": "${workspaceFolder}/.env",
 			"showAsyncStacks": true
 		}
