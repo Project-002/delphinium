@@ -11,23 +11,22 @@
   optionalDependencies:
     ws "^4.0.0"
 
-"@spectacles/cache@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@spectacles/cache/-/cache-0.2.1.tgz#49d2cf21273739621d010f72dde04661748dd0a8"
+"@spectacles/cache@^0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@spectacles/cache/-/cache-0.2.5.tgz#cec577f31f2a40d1e427249b3b01028373931b20"
   dependencies:
     redis-p "^0.1.8"
 
-"@spectacles/gateway@^0.8.0":
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/@spectacles/gateway/-/gateway-0.8.3.tgz#49d2db8015489faab34b3d9d46a8d1a99cb70796"
+"@spectacles/gateway@^0.8.4":
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/@spectacles/gateway/-/gateway-0.8.4.tgz#5bceac72dcefdbbcf21816637c8987cd534ea122"
   dependencies:
     "@spectacles/util" "^0.2.0"
     p-throttle "^1.1.0"
-    ws "^3.2.0"
+    ws "^4.0.0"
   optionalDependencies:
     bufferutil "^3.0.2"
-    erlpack "github:discordapp/erlpack"
-    utf-8-validate "^3.0.3"
+    utf-8-validate "^4.0.0"
 
 "@spectacles/util@^0.1.1":
   version "0.1.2"
@@ -360,9 +359,9 @@ eslint-visitor-keys@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
 
-eslint@^4.17.0:
-  version "4.17.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.17.0.tgz#dc24bb51ede48df629be7031c71d9dc0ee4f3ddf"
+eslint@^4.18.0:
+  version "4.18.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.18.0.tgz#ebd0ba795af6dc59aa5cee17938160af5950e051"
   dependencies:
     ajv "^5.3.0"
     babel-code-frame "^6.22.0"
@@ -710,7 +709,7 @@ mute-stream@0.0.7:
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.7.tgz#3075ce93bc21b8fab43e1bc4da7e8115ed1e7bab"
 
-nan@^2.1.0:
+nan@^2.1.0, nan@~2.8.0:
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.8.0.tgz#ed715f3fe9de02b57a5e6252d90a96675e1f085a"
 
@@ -1111,12 +1110,12 @@ unzip-response@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/unzip-response/-/unzip-response-1.0.2.tgz#b984f0877fc0a89c2c773cc1ef7b5b232b5b06fe"
 
-utf-8-validate@^3.0.3:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/utf-8-validate/-/utf-8-validate-3.0.4.tgz#a79962cfa4142dda7050234e7e9b37b33907d2af"
+utf-8-validate@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/utf-8-validate/-/utf-8-validate-4.0.0.tgz#93812f447b6fd11a3dad4302d5870830cae8470a"
   dependencies:
     bindings "~1.3.0"
-    nan "~2.7.0"
+    nan "~2.8.0"
     prebuild-install "~2.3.0"
 
 util-deprecate@~1.0.1:
@@ -1148,14 +1147,6 @@ write@^0.2.1:
   resolved "https://registry.yarnpkg.com/write/-/write-0.2.1.tgz#5fc03828e264cea3fe91455476f7a3c566cb0757"
   dependencies:
     mkdirp "^0.5.1"
-
-ws@^3.2.0:
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-3.3.3.tgz#f1cf84fe2d5e901ebce94efaece785f187a228f2"
-  dependencies:
-    async-limiter "~1.0.0"
-    safe-buffer "~5.1.0"
-    ultron "~1.1.0"
 
 ws@^4.0.0:
   version "4.0.0"
