@@ -5,6 +5,7 @@ class Event {
 		this.enabled = Boolean(options.enabled);
 		this.gateway = Boolean(options.gateway);
 		this.lava = Boolean(options.lava);
+		this.rpc = Boolean(options.rpc);
 	}
 
 	async _run(...args) {
