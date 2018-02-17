@@ -53,8 +53,9 @@ class Delphinium extends Client {
 			if (extname(event) !== '.js') continue;
 			event = require(join(this.eventPath, event));
 			if (typeof event === 'function') event = new event(this);
-			if (event.enabled && !event.gateway) this.on(event.name, event._run.bind(event));
-			if (event.enabled && (event.gateway || event.lava)) this.publisher.on(event.name, event._run.bind(event));
+			if (event.enabled && !event.gateway && !event.rpc) this.on(event.name, event._run.bind(event));
+			if (event.enabled && (event.gateway || event.lava) && !event.rpc) this.publisher.on(event.name, event._run.bind(event));
+			if (event.enabled && event.rpc && (!event.gateway || !event.lava)) this.rpc.on(event.name, event._run.bind(event));
 		}
 	}
 
