@@ -16,8 +16,7 @@ class Delphinium extends Client {
 		if (this.enableCache) {
 			this.cache = new Cache({
 				port: 6379,
-				host: '127.0.0.1',
-				family: 4,
+				host: process.env.REDIS,
 				db: 0
 			});
 		}
