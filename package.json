@@ -9,7 +9,7 @@
 	"private": true,
 	"dependencies": {
 		"@spectacles/brokers": "^0.4.2",
-		"@spectacles/cache": "^0.2.5",
+		"@spectacles/cache": "^0.2.6",
 		"@spectacles/gateway": "^0.8.4"
 	},
 	"devDependencies": {
