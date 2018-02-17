@@ -12,6 +12,7 @@ class Delphinium extends Client {
 		this.eventPath = options.eventPath;
 		this.consumer = new Amqp('consumer');
 		this.publisher = new Amqp('publisher');
+		this.rpc = new Amqp('rpc', { rpc: true });
 		this.enableCache = Boolean(options.cache);
 		if (this.enableCache) {
 			this.cache = new Cache({
@@ -57,12 +58,14 @@ class Delphinium extends Client {
 		}
 	}
 
-	async login(url = 'localhost', events) {
+	async login(url = 'localhost', events, rpcEvents) {
 		try {
 			const connection = await this.consumer.connect(url);
 			await this.publisher.connect(connection);
+			await this.rpc.connect(connection);
 
 			await this.publisher.subscribe(events);
+			await this.rpc.subscribe(rpcEvents);
 
 			await this.spawn();
 		} catch (error) {
