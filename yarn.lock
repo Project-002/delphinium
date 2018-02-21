@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@spectacles/brokers@^0.4.2":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@spectacles/brokers/-/brokers-0.4.2.tgz#7a3e125dcda2b5c20dabff7cd7c724d962e3b8e9"
+"@spectacles/brokers@^0.4.3":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@spectacles/brokers/-/brokers-0.4.3.tgz#17b49dabc0cd383e18379a1062fea77873582a42"
   dependencies:
     "@spectacles/util" "^0.1.1"
     amqplib "^0.5.2"
@@ -366,9 +366,9 @@ eslint-visitor-keys@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#3f3180fb2e291017716acb4c9d6d5b5c34a6a81d"
 
-eslint@^4.18.0:
-  version "4.18.0"
-  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.18.0.tgz#ebd0ba795af6dc59aa5cee17938160af5950e051"
+eslint@^4.18.1:
+  version "4.18.1"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.18.1.tgz#b9138440cb1e98b2f44a0d578c6ecf8eae6150b0"
   dependencies:
     ajv "^5.3.0"
     babel-code-frame "^6.22.0"
@@ -1141,7 +1141,7 @@ util-deprecate@~1.0.1:
 
 voice@Project-002/voice:
   version "0.1.0"
-  resolved "https://codeload.github.com/Project-002/voice/tar.gz/1d69959fc8fb34721c08cbccafb9e97c74f4ff71"
+  resolved "https://codeload.github.com/Project-002/voice/tar.gz/857f4b6fdcfef8a3f2cf47170311f0700f811ecd"
   dependencies:
     axios "^0.17.1"
     ws "^4.0.0"
