@@ -71,7 +71,12 @@ class Event {
 			try {
 				await this.run(...args);
 			} catch (error) {
-				this.client.emit('error', this, args, error);
+				/**
+				 * Emmited when there was an error
+				 * @event Delphinium#error
+				 * @param {?(Error|TypeError|RangeError)} error The error received
+				 */
+				this.client.emit('error', error);
 			}
 		}
 	}
