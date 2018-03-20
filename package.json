@@ -9,13 +9,13 @@
 	"private": true,
 	"dependencies": {
 		"@spectacles/brokers": "^0.4.3",
-		"@spectacles/cache": "^0.2.8",
+		"@spectacles/cache": "^0.2.9",
 		"@spectacles/gateway": "^0.8.5",
 		"voice": "Project-002/voice"
 	},
 	"devDependencies": {
 		"env-cmd": "^7.0.0",
-		"eslint": "^4.18.2",
+		"eslint": "^4.19.0",
 		"eslint-config-aqua": "^2.0.1"
 	},
 	"eslintConfig": {
