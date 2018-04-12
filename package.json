@@ -9,7 +9,7 @@
 	"private": true,
 	"dependencies": {
 		"@spectacles/brokers": "^0.4.4",
-		"@spectacles/cache": "^0.3.1",
+		"@spectacles/cache": "^0.3.3",
 		"@spectacles/gateway": "^0.8.5",
 		"ioredis": "^3.2.2",
 		"voice": "Project-002/voice"
