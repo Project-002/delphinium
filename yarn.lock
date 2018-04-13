@@ -12,12 +12,12 @@
     ws "^4.0.0"
 
 "@spectacles/cache@^0.3.3":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@spectacles/cache/-/cache-0.3.3.tgz#cbe577cf0356e0cf14b143457c85d59178f02e54"
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/@spectacles/cache/-/cache-0.3.5.tgz#76a5ae29e9c07c055dadee392c0b3a32ae6ebbd9"
   dependencies:
     "@spectacles/types" "^0.1.1"
     ioredis "^3.2.2"
-    rejects "^0.3.1"
+    rejects "^0.3.3"
 
 "@spectacles/gateway@^0.8.5":
   version "0.8.5"
@@ -1048,9 +1048,9 @@ regexpp@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/regexpp/-/regexpp-1.1.0.tgz#0e3516dd0b7904f413d2d4193dce4618c3a689ab"
 
-rejects@^0.3.1:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/rejects/-/rejects-0.3.2.tgz#1973c199f147ff3bf015a30700d205228d8a5857"
+rejects@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/rejects/-/rejects-0.3.3.tgz#35c93266741973fd9330b86afb0b842a2019971b"
 
 require-uncached@^1.0.3:
   version "1.0.3"
@@ -1271,7 +1271,7 @@ voice@Project-002/voice:
   resolved "https://codeload.github.com/Project-002/voice/tar.gz/b6cec02dd3c651d8aad6197f3ed578b5ec2a1f79"
   dependencies:
     axios "^0.18.0"
-    ws "^4.1.0"
+    ws "^5.1.1"
 
 which-pm-runs@^1.0.0:
   version "1.0.0"
@@ -1303,12 +1303,18 @@ write@^0.2.1:
   dependencies:
     mkdirp "^0.5.1"
 
-ws@^4.0.0, ws@^4.1.0:
+ws@^4.0.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/ws/-/ws-4.1.0.tgz#a979b5d7d4da68bf54efe0408967c324869a7289"
   dependencies:
     async-limiter "~1.0.0"
     safe-buffer "~5.1.0"
+
+ws@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-5.1.1.tgz#1d43704689711ac1942fd2f283e38f825c4b8b95"
+  dependencies:
+    async-limiter "~1.0.0"
 
 xtend@^4.0.0:
   version "4.0.1"
