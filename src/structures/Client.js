@@ -1,6 +1,6 @@
 const { Client } = require('@spectacles/gateway');
 const { Amqp } = require('@spectacles/brokers');
-const { Client: Cache } = require('@spectacles/cache');
+const { default: Cache } = require('@spectacles/cache');
 const { readdirSync } = require('fs');
 const { extname, join } = require('path');
 const { LavaLink } = require('voice');
