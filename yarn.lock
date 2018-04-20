@@ -31,8 +31,8 @@
     utf-8-validate "^4.0.0"
 
 "@spectacles/types@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@spectacles/types/-/types-0.1.1.tgz#0e4849aff9a1715f3794c109e6f61711575e760e"
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@spectacles/types/-/types-0.1.2.tgz#5d5a4f9c5b7931eb2c1c5b2910dadca567e53a7c"
 
 "@spectacles/util@^0.1.1":
   version "0.1.2"
@@ -224,8 +224,8 @@ chalk@^1.1.3:
     supports-color "^2.0.0"
 
 chalk@^2.0.0, chalk@^2.1.0:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.3.2.tgz#250dc96b07491bfd601e648d66ddf5f60c7a5c65"
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/chalk/-/chalk-2.4.0.tgz#a060a297a6b57e15b61ca63ce84995daa0fe6e52"
   dependencies:
     ansi-styles "^3.2.1"
     escape-string-regexp "^1.0.5"
@@ -957,8 +957,8 @@ pluralize@^7.0.0:
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-7.0.0.tgz#298b89df8b93b0221dbf421ad2b1b1ea23fc6777"
 
 prebuild-install@~2.5.0:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/prebuild-install/-/prebuild-install-2.5.1.tgz#0f234140a73760813657c413cdccdda58296b1da"
+  version "2.5.3"
+  resolved "https://registry.yarnpkg.com/prebuild-install/-/prebuild-install-2.5.3.tgz#9f65f242782d370296353710e9bc843490c19f69"
   dependencies:
     detect-libc "^1.0.3"
     expand-template "^1.0.2"
@@ -1049,8 +1049,8 @@ regexpp@^1.0.1:
   resolved "https://registry.yarnpkg.com/regexpp/-/regexpp-1.1.0.tgz#0e3516dd0b7904f413d2d4193dce4618c3a689ab"
 
 rejects@^0.3.4:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/rejects/-/rejects-0.3.4.tgz#49be9df8a96a3c3a6c2440a39f19df3bb07cf40b"
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/rejects/-/rejects-0.3.6.tgz#1af2dc0564d4fdbbae74653308fac9a78eae49a0"
 
 require-uncached@^1.0.3:
   version "1.0.3"
@@ -1190,8 +1190,8 @@ supports-color@^2.0.0:
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
 
 supports-color@^5.3.0:
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-5.3.0.tgz#5b24ac15db80fa927cf5227a4a33fd3c4c7676c0"
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-5.4.0.tgz#1c6b337402c2137605efe19f10fec390f6faab54"
   dependencies:
     has-flag "^3.0.0"
 
