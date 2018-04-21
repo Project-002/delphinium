@@ -6,10 +6,10 @@ class Event {
 	 * Options that are passed when creating a new event
 	 * @typedef {object} EventOptions
 	 * @prop {string} [name] The event name
-	 * @prop {boolean} [enabled=null] If the event should be enabled
-	 * @prop {boolean} [gateway=null] If this event is a gateway event
-	 * @prop {boolean} [lava=null] If this event is a LavaPlayer event
-	 * @prop {boolean} [rpc=null] If this event is an RPc event
+	 * @prop {boolean} [enabled=false] If the event should be enabled
+	 * @prop {boolean} [gateway=false] If this event is a gateway event
+	 * @prop {boolean} [lava=false] If this event is a LavaPlayer event
+	 * @prop {boolean} [rpc=false] If this event is an RPc event
 	 */
 
 	/**
@@ -21,9 +21,11 @@ class Event {
 	constructor(client, options = {}) {
 		/**
 		 * The client instance
+		 * @name Event#client
 		 * @type {Delphinium}
+		 * @readonly
 		 */
-		this.client = client;
+		Object.defineProperty(this, 'client', { value: client });
 
 		/**
 		 * The event name
@@ -62,8 +64,8 @@ class Event {
 
 	/**
 	 * Runs the event if it is enabled.
-	 * @param {Array<*>} args The arguments received
 	 * @private
+	 * @param {Array<*>} args The arguments received
 	 * @memberof Event
 	 */
 	async _run(...args) {
@@ -87,7 +89,7 @@ class Event {
 	 * @abstract
 	 * @memberof Event
 	 */
-	run(...args) {} // eslint-disable-line no-unused-vars
+	run(...args) {}
 }
 
 module.exports = Event;

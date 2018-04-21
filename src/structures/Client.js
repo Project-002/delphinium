@@ -15,8 +15,8 @@ class Delphinium extends Client {
 	 * @typedef {Object} DelphiniumOptions
 	 * @prop {string} [token] The token
 	 * @prop {string} [eventPath] The event path
-	 * @prop {boolean} [cache=null] If caching should be enabled
-	 * @prop {boolean} [voice=null] If voice support should be enabled
+	 * @prop {boolean} [cache=false] If caching should be enabled
+	 * @prop {boolean} [voice=false] If voice support should be enabled
 	 */
 
 	/**
@@ -108,6 +108,7 @@ class Delphinium extends Client {
 		 * @type {Map<string, Object>}
 		 */
 		this.unavailableGuilds = new Map();
+
 		this.once('READY', packet => this._ready(packet));
 	}
 
