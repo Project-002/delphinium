@@ -11,13 +11,13 @@
   optionalDependencies:
     ws "^4.0.0"
 
-"@spectacles/cache@^0.3.7":
-  version "0.3.7"
-  resolved "https://registry.yarnpkg.com/@spectacles/cache/-/cache-0.3.7.tgz#717fb07791dd410a463438820724a01b617de367"
+"@spectacles/cache@^0.3.8":
+  version "0.3.8"
+  resolved "https://registry.yarnpkg.com/@spectacles/cache/-/cache-0.3.8.tgz#57b6d979dfdd7793dd70143c5730b8716ad4eabf"
   dependencies:
     "@spectacles/types" "^0.1.1"
     ioredis "^3.2.2"
-    rejects "^0.3.4"
+    rejects "^0.3.6"
 
 "@spectacles/gateway@^0.8.5":
   version "0.8.5"
@@ -1048,7 +1048,7 @@ regexpp@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/regexpp/-/regexpp-1.1.0.tgz#0e3516dd0b7904f413d2d4193dce4618c3a689ab"
 
-rejects@^0.3.4:
+rejects@^0.3.6:
   version "0.3.6"
   resolved "https://registry.yarnpkg.com/rejects/-/rejects-0.3.6.tgz#1af2dc0564d4fdbbae74653308fac9a78eae49a0"
 
@@ -1271,7 +1271,7 @@ voice@Project-002/voice:
   resolved "https://codeload.github.com/Project-002/voice/tar.gz/b6cec02dd3c651d8aad6197f3ed578b5ec2a1f79"
   dependencies:
     axios "^0.18.0"
-    ws "^5.1.1"
+    ws "^4.1.0"
 
 which-pm-runs@^1.0.0:
   version "1.0.0"
