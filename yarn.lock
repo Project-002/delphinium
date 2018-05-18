@@ -19,9 +19,9 @@
     ioredis "^3.2.2"
     rejects "^0.3.6"
 
-"@spectacles/gateway@^0.9.1":
-  version "0.9.1"
-  resolved "https://registry.yarnpkg.com/@spectacles/gateway/-/gateway-0.9.1.tgz#189722e8e54a78d0ecfad38b4bb47728f46ee540"
+"@spectacles/gateway@^0.9.3":
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/@spectacles/gateway/-/gateway-0.9.3.tgz#6b7fc560f98ac076aa40ee0f433a93d4539f43ea"
   dependencies:
     "@spectacles/util" "^0.2.0"
     p-throttle "^1.1.0"
@@ -396,9 +396,9 @@ escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
-eslint-config-aqua@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-aqua/-/eslint-config-aqua-4.0.1.tgz#227d7270e865409d0599a51eaa8c517dc25328ca"
+eslint-config-aqua@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-aqua/-/eslint-config-aqua-4.1.0.tgz#45f266fe41d56e130456e5959b9cc8e8b0746400"
 
 eslint-scope@^3.7.1:
   version "3.7.1"
@@ -1041,7 +1041,7 @@ rc@^1.1.6:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-readable-stream@^2.0.0, readable-stream@^2.0.6, readable-stream@^2.2.2, readable-stream@^2.3.5:
+readable-stream@^2.0.6, readable-stream@^2.2.2, readable-stream@^2.3.0, readable-stream@^2.3.5:
   version "2.3.6"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
   dependencies:
@@ -1233,14 +1233,14 @@ tar-fs@^1.13.0:
     tar-stream "^1.1.2"
 
 tar-stream@^1.1.2:
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/tar-stream/-/tar-stream-1.6.0.tgz#a50efaa7b17760b82c27b3cae4a301a8254a5715"
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/tar-stream/-/tar-stream-1.6.1.tgz#f84ef1696269d6223ca48f6e1eeede3f7e81f395"
   dependencies:
     bl "^1.0.0"
     buffer-alloc "^1.1.0"
     end-of-stream "^1.0.0"
     fs-constants "^1.0.0"
-    readable-stream "^2.0.0"
+    readable-stream "^2.3.0"
     to-buffer "^1.1.0"
     xtend "^4.0.0"
 

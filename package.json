@@ -10,16 +10,16 @@
 	"dependencies": {
 		"@spectacles/brokers": "^0.4.4",
 		"@spectacles/cache": "^0.3.8",
-		"@spectacles/gateway": "^0.9.1",
+		"@spectacles/gateway": "^0.9.3",
 		"ioredis": "^3.2.2",
 		"voice": "Project-002/voice"
 	},
 	"devDependencies": {
 		"dotenv": "^5.0.1",
 		"eslint": "^4.19.1",
-		"eslint-config-aqua": "^4.0.0"
+		"eslint-config-aqua": "^4.1.0"
 	},
 	"eslintConfig": {
-		"extends": "aqua/src/node"
+		"extends": "aqua/node"
 	}
 }
