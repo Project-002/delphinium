@@ -5,21 +5,10 @@ class GATEWAY_VOICE_STATE_UPDATE extends Event {
 		super(...args, { name: 'discord:VOICE_STATE_UPDATE', enabled: true, gateway: true });
 	}
 
-	run(packet, { ack }) {
-		if (packet.d.channel_id) {
-			this.client.lavalink.join({
-				shard: packet.shard,
-				op: packet.op,
-				d: packet.d,
-				host: process.env.HOST
-			});
-		} else {
-			this.client.lavalink.leave({
-				shard: packet.shard,
-				op: packet.op,
-				d: packet.d
-			});
-		}
+	async run(packet, { ack }) {
+		const queue = this.client.lavalink.queues.get(packet.d.guild_id);
+		await queue.player.join(packet.d.channel_id);
+		queue.player.on('event', d => console.log(d));
 		ack();
 	}
 }
