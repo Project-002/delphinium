@@ -5,7 +5,7 @@ class MESSAGE_CREATE extends Event {
 		super(...args, { name: 'MESSAGE_CREATE', enabled: true });
 	}
 
-	async run(message) {
+	async run(shard, message) {
 		await this.client.consumer.publish('discord:MESSAGE_CREATE', message, { expiration: '60000' });
 	}
 }

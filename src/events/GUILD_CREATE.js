@@ -5,7 +5,7 @@ class GUILD_CREATE extends Event {
 		super(...args, { name: 'GUILD_CREATE', enabled: true });
 	}
 
-	async run(message) {
+	async run(shard, message) {
 		if (this.client.ready) {
 			if (this.client.unavailableGuilds.delete(message.id)) {
 				// LUL DO NOTHING

@@ -5,7 +5,7 @@ class GUILD_DELETE extends Event {
 		super(...args, { name: 'GUILD_DELETE', enabled: true });
 	}
 
-	async run(message) {
+	async run(shard, message) {
 		if (this.client.ready) {
 			if (message.unavailable) {
 				// LUL DO NOTHING
