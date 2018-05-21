@@ -3,7 +3,8 @@ const { Amqp } = require('@spectacles/brokers');
 const { default: Cache } = require('@spectacles/cache');
 const { readdirSync } = require('fs');
 const { extname, join } = require('path');
-const { LavaLink } = require('voice');
+const Redis = require('ioredis');
+const Lavalink = require('./Lavalink');
 
 /**
  * The Delphinium client.
@@ -77,6 +78,16 @@ class Delphinium extends Client {
 		}
 
 		/**
+		 * The redis of this client
+		 * @type {Redis}
+		 */
+		this.redis = new Redis({
+			port: 6379,
+			host: process.env.REDIS,
+			db: 1
+		});
+
+		/**
 		 * If voice is enabled
 		 * @type {boolean}
 		 */
@@ -87,13 +98,13 @@ class Delphinium extends Client {
 			 * The LavaLink instance for this client
 			 * @type {?LavaLink}
 			 */
-			this.lavalink = new LavaLink(this);
-			this.lavalink.createNode({
-				gateway: process.env.GATEWAY,
-				shards: process.env.SHARDS,
-				user: process.env.USER,
-				password: process.env.PASSWORD,
-				host: process.env.HOST
+			this.lavalink = new Lavalink({
+				user: options.id,
+				client: this,
+				password: process.env.LAVALINK_PASSWORD,
+				rest: process.env.LAVALINK_REST,
+				ws: process.env.LAVALINK_WS,
+				redis: this.redis
 			});
 
 			/**
@@ -109,16 +120,17 @@ class Delphinium extends Client {
 		 */
 		this.unavailableGuilds = new Map();
 
-		this.once('READY', packet => this._ready(packet));
+		this.once('READY', (shard, packet) => this._ready(shard, packet));
 	}
 
 	/**
 	 * Handles the READY event.
+	 * @param {number} shard The shard
 	 * @param {Object} packet The ready packet
 	 * @private
 	 * @memberof Delphinium
 	 */
-	_ready(packet) {
+	_ready(shard, packet) {
 		packet.guilds.forEach(guild => {
 			if (guild.unavailable) this.unavailableGuilds.set(guild.id, guild);
 			else this.unavailableGuilds.delete(guild.id);
@@ -162,6 +174,7 @@ class Delphinium extends Client {
 			await this.rpc.subscribe(rpcEvents);
 
 			await this.spawn();
+			await this.lavalink.connect();
 		} catch (error) {
 			/**
 			 * Emmited when Delphinium encounters an error

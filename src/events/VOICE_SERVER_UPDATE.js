@@ -8,10 +8,7 @@ class VOICE_SERVER_UPDATE extends Event {
 	async run(message) {
 		await this.client.consumer.publish('discord:VOICE_SERVER_UPDATE', message, { expiration: '60000' });
 		if (this.client.enableVoice) {
-			this.client.lavalink.players.get(message.guild_id).on('error', console.error);
-			this.client.lavalink.players.get(message.guild_id).on('end', async packet => {
-				await this.client.consumer.publish('lavalink:END', packet, { expiration: '60000' });
-			});
+			this.client.lavalink.voiceServerUpdate(message);
 		}
 	}
 }

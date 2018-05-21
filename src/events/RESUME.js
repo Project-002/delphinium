@@ -5,13 +5,9 @@ class RESUME extends Event {
 		super(...args, { name: 'lavalink:RESUME', enabled: true, lava: true });
 	}
 
-	run(packet, { ack }) {
-		const player = this.client.lavalink.players.get(packet.guild);
-		if (!player) {
-			ack();
-			return;
-		}
-		player.pause(packet.pause);
+	async run(packet, { ack }) {
+		const queue = this.client.lavalink.queues.get(packet.guild);
+		await queue.player.pause(false);
 		ack();
 	}
 }

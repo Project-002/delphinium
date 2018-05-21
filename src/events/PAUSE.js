@@ -5,13 +5,9 @@ class PAUSE extends Event {
 		super(...args, { name: 'lavalink:PAUSE', enabled: true, lava: true });
 	}
 
-	run(packet, { ack }) {
-		const player = this.client.lavalink.players.get(packet.guild);
-		if (!player) {
-			ack();
-			return;
-		}
-		player.pause(packet.pause);
+	async run(packet, { ack }) {
+		const queue = this.client.lavalink.queues.get(packet.guild);
+		await queue.player.pause();
 		ack();
 	}
 }

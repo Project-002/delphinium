@@ -5,13 +5,9 @@ class VOLUME extends Event {
 		super(...args, { name: 'lavalink:VOLUME', enabled: true, lava: true });
 	}
 
-	run(packet, { ack }) {
-		const player = this.client.lavalink.players.get(packet.guild);
-		if (!player) {
-			ack();
-			return;
-		}
-		player.volume(packet.volume);
+	async run(packet, { ack }) {
+		const queue = this.client.lavalink.queues.get(packet.guild);
+		await queue.player.setVolume(packet.volume);
 		ack();
 	}
 }
