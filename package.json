@@ -9,7 +9,7 @@
 	"private": true,
 	"dependencies": {
 		"@spectacles/brokers": "^0.4.4",
-		"@spectacles/cache": "^0.3.8",
+		"@spectacles/cache": "^0.3.12",
 		"@spectacles/gateway": "^0.10.0",
 		"ioredis": "^3.2.2",
 		"lavalink": "^0.6.1",
