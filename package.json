@@ -10,9 +10,10 @@
 	"dependencies": {
 		"@spectacles/brokers": "^0.4.4",
 		"@spectacles/cache": "^0.3.8",
-		"@spectacles/gateway": "^0.9.3",
+		"@spectacles/gateway": "^0.10.0",
 		"ioredis": "^3.2.2",
-		"voice": "Project-002/voice"
+		"lavalink": "^0.6.1",
+		"lavaqueue": "^0.3.2"
 	},
 	"devDependencies": {
 		"dotenv": "^5.0.1",
