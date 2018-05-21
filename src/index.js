@@ -7,6 +7,7 @@ process.on('unhandledRejection', console.error);
 const client = new Delphinium({
 	token: process.env.DISCORD_TOKEN,
 	id: process.env.USER_ID,
+	shards: process.env.SHARDS,
 	eventPath: join(__dirname, 'events'),
 	cache: true,
 	voice: true

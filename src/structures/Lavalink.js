@@ -17,7 +17,7 @@ class Lavalink extends Lavaqueue {
 	}
 
 	send(guildID, packet) {
-		const shard = parseInt(idToBinary(guildID).slice(0, -22), 2) % 1;
+		const shard = parseInt(idToBinary(guildID).slice(0, -22), 2) % this.client.shards;
 		this.client.connections.get(shard).send(packet);
 	}
 }

@@ -36,6 +36,13 @@ class Delphinium extends Client {
 		this.ready = false;
 
 		/**
+		 * The amount of shards to spawn
+		 * @type {number}
+		 * @default 1
+		 */
+		this.shards = parseInt(options.shards, 10) || 1;
+
+		/**
 		 * The event path where event files are located
 		 * @type {string}
 		 */
@@ -120,7 +127,9 @@ class Delphinium extends Client {
 		 */
 		this.unavailableGuilds = new Map();
 
-		this.once('READY', (shard, packet) => this._ready(shard, packet));
+		this.emitReady();
+
+		this.on('READY', (shard, packet) => this._ready(shard, packet));
 	}
 
 	/**
@@ -131,13 +140,13 @@ class Delphinium extends Client {
 	 * @memberof Delphinium
 	 */
 	_ready(shard, packet) {
+		console.log('SPAWNING SHARD: ' + shard);
 		packet.guilds.forEach(guild => {
 			if (guild.unavailable) this.unavailableGuilds.set(guild.id, guild);
 			else this.unavailableGuilds.delete(guild.id);
 		});
 
 		this.ready = true;
-		this.emitReady();
 	}
 
 	/**
@@ -173,7 +182,7 @@ class Delphinium extends Client {
 			await this.publisher.subscribe(events);
 			await this.rpc.subscribe(rpcEvents);
 
-			await this.spawn();
+			await this.spawn(this.shards);
 			await this.lavalink.connect();
 		} catch (error) {
 			/**
