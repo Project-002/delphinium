@@ -742,15 +742,15 @@ json-stable-stringify-without-jsonify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz#9db7b59496ad3f3cfef30a75142d2d930ad72651"
 
-lavalink@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.yarnpkg.com/lavalink/-/lavalink-0.6.1.tgz#730d47e102489db360786ba89854cd8c2f7ed53c"
+lavalink@^0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/lavalink/-/lavalink-0.7.2.tgz#303a263a886aafa54adf5faf6d1970c33e3f1438"
   dependencies:
     ws "^4.0.0"
 
-lavaqueue@^0.3.2:
-  version "0.3.2"
-  resolved "https://registry.yarnpkg.com/lavaqueue/-/lavaqueue-0.3.2.tgz#a0242e188a3a7c65606273b2223a4ceb03ada36c"
+lavaqueue@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/lavaqueue/-/lavaqueue-0.4.1.tgz#003c55beaffc03ec1c48601a0578890c5b765431"
   dependencies:
     ioredis "^3.2.2"
 
