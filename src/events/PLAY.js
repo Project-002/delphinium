@@ -8,7 +8,7 @@ class PLAY extends Event {
 	async run(packet, { ack }) {
 		const queue = this.client.lavalink.queues.get(packet.guild);
 		await queue.add([packet.track]);
-		await queue.start();
+		if (!queue.player.playing && !queue.player.paused) await queue.start();
 		ack();
 	}
 }
