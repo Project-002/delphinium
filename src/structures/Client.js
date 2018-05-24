@@ -3,7 +3,6 @@ const { Amqp } = require('@spectacles/brokers');
 const { default: Cache } = require('@spectacles/cache');
 const { readdirSync } = require('fs');
 const { extname, join } = require('path');
-const Redis = require('ioredis');
 const Lavalink = require('./Lavalink');
 
 /**
@@ -85,16 +84,6 @@ class Delphinium extends Client {
 		}
 
 		/**
-		 * The redis of this client
-		 * @type {Redis}
-		 */
-		this.redis = new Redis({
-			port: 6379,
-			host: process.env.REDIS,
-			db: 1
-		});
-
-		/**
 		 * If voice is enabled
 		 * @type {boolean}
 		 */
@@ -111,7 +100,7 @@ class Delphinium extends Client {
 				password: process.env.LAVALINK_PASSWORD,
 				rest: process.env.LAVALINK_REST,
 				ws: process.env.LAVALINK_WS,
-				redis: this.redis
+				redis: this.cache
 			});
 
 			/**
@@ -139,12 +128,24 @@ class Delphinium extends Client {
 	 * @private
 	 * @memberof Delphinium
 	 */
-	_ready(shard, packet) {
+	async _ready(shard, packet) {
 		console.log('SPAWNING SHARD: ' + shard);
 		packet.guilds.forEach(guild => {
 			if (guild.unavailable) this.unavailableGuilds.set(guild.id, guild);
 			else this.unavailableGuilds.delete(guild.id);
 		});
+
+		const data = await this.cache.storage.get('players', { type: 'arr' });
+		console.log(data);
+		if (data) {
+			for (const player of data) {
+				if (player.channel_id) {
+					const queue = this.lavalink.queues.get(player.guild_id);
+					await queue.player.join(player.channel_id);
+					await queue.start();
+				}
+			}
+		}
 
 		this.ready = true;
 	}
