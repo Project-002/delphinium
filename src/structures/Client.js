@@ -142,8 +142,8 @@ class Delphinium extends Client {
 				if (player.channel_id) {
 					const queue = this.lavalink.queues.get(player.guild_id);
 					await queue.player.join(player.channel_id);
-					await queue.start();
 				}
+				await this.lavalink.queues.start();
 			}
 		}
 
@@ -184,7 +184,6 @@ class Delphinium extends Client {
 			await this.rpc.subscribe(rpcEvents);
 
 			await this.spawn(this.shards);
-			await this.lavalink.connect();
 		} catch (error) {
 			/**
 			 * Emmited when Delphinium encounters an error
