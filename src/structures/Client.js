@@ -100,7 +100,7 @@ class Delphinium extends Client {
 				password: process.env.LAVALINK_PASSWORD,
 				rest: process.env.LAVALINK_REST,
 				ws: process.env.LAVALINK_WS,
-				redis: this.cache
+				redis: this.cache.redis
 			});
 
 			/**
