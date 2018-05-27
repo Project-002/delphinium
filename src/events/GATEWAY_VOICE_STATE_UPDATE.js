@@ -12,8 +12,8 @@ class GATEWAY_VOICE_STATE_UPDATE extends Event {
 			await this.client.cache.storage.upsert('players', [{ guild_id: packet.d.guild_id, channel_id: packet.d.channel_id }]);
 		} else {
 			const players = await this.client.cache.storage.get('players', { type: 'arr' });
+			if (!players) return;
 			const index = players.findIndex(player => player.guild_id === packet.d.guild_id);
-			console.log(players);
 			players.splice(index, 1);
 			if (players.length === 0) await this.client.cache.storage.delete('players');
 			else await this.client.cache.storage.set('players', players);
