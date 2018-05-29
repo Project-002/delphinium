@@ -7,9 +7,6 @@ class VOICE_SERVER_UPDATE extends Event {
 
 	async run(shard, message) {
 		await this.client.consumer.publish('discord:VOICE_SERVER_UPDATE', message, { expiration: '60000' });
-		if (this.client.enableVoice) {
-			this.client.lavalink.voiceServerUpdate(message);
-		}
 	}
 }
 

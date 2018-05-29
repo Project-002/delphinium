@@ -116,7 +116,7 @@ class Delphinium extends Client {
 		 */
 		this.unavailableGuilds = new Map();
 
-		this.emitReady();
+		this.initialize();
 
 		this.on('READY', (shard, packet) => this._ready(shard, packet));
 	}
@@ -135,35 +135,50 @@ class Delphinium extends Client {
 			else this.unavailableGuilds.delete(guild.id);
 		});
 
-		const data = await this.cache.storage.get('players', { type: 'arr' });
-		console.log(data);
-		if (data) {
-			for (const player of data) {
+		const players = await this.cache.storage.get('players', { type: 'arr' });
+		console.log(players);
+		if (players) {
+			for (const player of players) {
 				if (player.channel_id) {
-					const queue = this.lavalink.queues.get(player.guild_id);
-					await queue.player.join(player.channel_id);
+					await this.publisher.publish('discord:VOICE_STATE_UPDATE', {
+						shard: 0,
+						op: 4,
+						d: {
+							guild_id: player.guild_id,
+							channel_id: player.channel_id,
+							self_mute: false,
+							self_deaf: false
+						}
+					}, { expiration: '60000' });
 				}
-				await this.lavalink.queues.start();
 			}
+			await this.lavalink.queues.start();
 		}
 
 		this.ready = true;
 	}
 
 	/**
-	 * Emits the ready event for this client.
+	 * Initializes events for this client.
 	 * @private
 	 * @memberof Delphinium
 	 */
-	emitReady() {
+	initialize() {
 		const files = readdirSync(this.eventPath);
 		for (let event of files) {
 			if (extname(event) !== '.js') continue;
 			event = require(join(this.eventPath, event));
 			if (typeof event === 'function') event = new event(this);
-			if (event.enabled && !event.rpc && !(event.gateway || event.lava)) this.on(event.name, event._run.bind(event));
-			if (event.enabled && !event.rpc && (event.gateway || event.lava)) this.publisher.on(event.name, event._run.bind(event));
-			if (event.enabled && event.rpc && !(event.gateway || event.lava)) this.rpc.on(event.name, event._run.bind(event));
+			if (event.enabled) {
+				if (!event.rpc && !event.gateway && !event.lava) this.on(event.name, event._run.bind(event));
+				if (!event.rpc && (event.gateway || event.lava)) this.publisher.on(event.name, event._run.bind(event));
+				if (event.rpc && !event.gateway && !event.lava) this.rpc.on(event.name, event._run.bind(event));
+			}
+		}
+
+		if (this.enableVoice) {
+			this.on('VOICE_SERVER_UPDATE', (shard, message) => this.lavalink.voiceServerUpdate(message));
+			this.on('VOICE_STATE_UPDATE', (shard, message) => this.lavalink.voiceStateUpdate(message));
 		}
 	}
 

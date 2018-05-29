@@ -14,6 +14,7 @@ const client = new Delphinium({
 });
 
 client.on('error', console.error);
+if (client.enableVoice) client.lavalink.on('error', console.error);
 
 client.login(process.env.RABBITMQ,
 	[
