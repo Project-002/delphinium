@@ -4,6 +4,7 @@ const { default: Cache } = require('@spectacles/cache');
 const { readdirSync } = require('fs');
 const { extname, join } = require('path');
 const Lavalink = require('./Lavalink');
+const idToBinary = require('../util/idToBinary');
 
 /**
  * The Delphinium client.
@@ -140,8 +141,29 @@ class Delphinium extends Client {
 		if (players) {
 			for (const player of players) {
 				if (player.channel_id) {
+					const shardNum = parseInt(idToBinary(player.guild_id).slice(0, -22), 2) % this.shards;
 					await this.publisher.publish('discord:VOICE_STATE_UPDATE', {
-						shard: 0,
+						shard: shardNum,
+						op: 4,
+						d: {
+							guild_id: player.guild_id,
+							channel_id: player.channel_id,
+							self_mute: false,
+							self_deaf: false
+						}
+					}, { expiration: '60000' });
+					await this.publisher.publish('discord:VOICE_STATE_UPDATE', {
+						shard: shardNum,
+						op: 4,
+						d: {
+							guild_id: player.guild_id,
+							channel_id: null,
+							self_mute: false,
+							self_deaf: false
+						}
+					}, { expiration: '60000' });
+					await this.publisher.publish('discord:VOICE_STATE_UPDATE', {
+						shard: shardNum,
 						op: 4,
 						d: {
 							guild_id: player.guild_id,
