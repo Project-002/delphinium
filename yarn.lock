@@ -368,9 +368,9 @@ doctrine@^2.1.0:
   dependencies:
     esutils "^2.0.2"
 
-dotenv@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-5.0.1.tgz#a5317459bd3d79ab88cff6e44057a6a3fbb1fcef"
+dotenv@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-6.0.0.tgz#24e37c041741c5f4b25324958ebbc34bca965935"
 
 end-of-stream@^1.0.0, end-of-stream@^1.1.0:
   version "1.4.1"
@@ -742,11 +742,11 @@ json-stable-stringify-without-jsonify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz#9db7b59496ad3f3cfef30a75142d2d930ad72651"
 
-lavalink@^0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/lavalink/-/lavalink-0.7.2.tgz#303a263a886aafa54adf5faf6d1970c33e3f1438"
+lavalink@^0.7.4:
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/lavalink/-/lavalink-0.7.4.tgz#5e4e77093a1e016b1088d476a50653a5884e3826"
   dependencies:
-    ws "^4.0.0"
+    ws "^5.2.0"
 
 lavaqueue@^0.4.1:
   version "0.4.1"
@@ -1321,6 +1321,12 @@ ws@^4.0.0:
   dependencies:
     async-limiter "~1.0.0"
     safe-buffer "~5.1.0"
+
+ws@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-5.2.0.tgz#9fd95e3ac7c76f6ae8bcc868a0e3f11f1290c33e"
+  dependencies:
+    async-limiter "~1.0.0"
 
 xtend@^4.0.0:
   version "4.0.1"
